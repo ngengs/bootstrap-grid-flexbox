@@ -125,24 +125,41 @@
    justify-content: @aligment;
 }
 
-.make-generate-aligment-with-text(@name) when (@name = center ) or (@name = start) or (@name = end){
-  text-align: @name;
+.make-generate-vertical-aligment-other(@aligment) when not (@aligment = center){
+  @value: ~"flex-@{aligment}";
+   -webkit-align-items: @value;
+   align-items: @value;
 }
 
-.make-generate-aligment(@class, @name, @aligment){
+.make-generate-vertical-aligment-other(@aligment) when (@aligment = center){
+   -webkit-align-items: @aligment;
+   align-items: @aligment;
+}
+
+.make-generate-aligment(@class, @name){
   .@{name}-@{class}{
-    -webkit-box-pack: @aligment;
-    -ms-flex-pack: @aligment;
-    .make-generate-aligment-other(@aligment);
-    .make-generate-aligment-with-text(@name);
+    -webkit-box-pack: @name;
+    -ms-flex-pack: @name;
+    .make-generate-aligment-other(@name);
+    &.text-@{name}{
+      text-align: @name;
+    }
+  }
+}
+
+.make-generate-vertical-aligment(@class, @name, @aligment){
+  .@{name}-@{class}{
+  -webkit-box-align: @aligment;
+    -ms-flex-align: @aligment;
+    .make-generate-vertical-aligment-other(@aligment);
   }
 }
 
 .make-aligment(@class){
-  .make-generate-aligment(@class,start,start);
-  .make-generate-aligment(@class,center,center);
-  .make-generate-aligment(@class,end,start);
-  .make-generate-aligment(@class,top,start);
-  .make-generate-aligment(@class,middle,center);
-  .make-generate-aligment(@class,bottom,end);
+  .make-generate-aligment(@class,start);
+  .make-generate-aligment(@class,center);
+  .make-generate-aligment(@class,end);
+  .make-generate-vertical-aligment(@class,top,start);
+  .make-generate-vertical-aligment(@class,middle,center);
+  .make-generate-vertical-aligment(@class,bottom,end);
 }
