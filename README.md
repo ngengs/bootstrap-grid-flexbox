@@ -172,7 +172,7 @@ I use Grunt to build
 1. Install Node.js [download](https://nodejs.org/en/)
 2. Install Gruntjs
 
-   ```
+    ```
     npm install -g grunt-cli
     ```
 3. Install package from [build](build) directory
