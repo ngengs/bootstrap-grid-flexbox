@@ -54,26 +54,52 @@ Add the css after the Bootstrap css
 ```
 After that basically you just can use the class for **row** and **col**.
 
+**Is this just for bootstrap? Hell No.** You can still using the grid without bootstrap. But you still need create your own container
+
 Basically using the grid and row is the same as bootstrap at [here](http://getbootstrap.com/css/#grid), you can use ```offset``` ```pull``` ```push``` and responsive grid like ```xs``` ```sm``` ```md``` ```lg``` at [here](http://getbootstrap.com/css/#grid-options).
 
 But I replace ```row``` and ```col``` with my class preference to avoid overide bootstrap row and grid.
 To use you just replace the ```.row``` with ```.row-flex``` and ```.col-``` with ```.col-flex-```
 
-Example:
+**Example:**
 ```
 <div class="row-flex">
-  <div class="col-flex-md-1">.col-flex-md-1<br>.col-flex-md-1</div>
-  <div class="col-flex-md-1">.col-flex-md-1</div>
-  <div class="col-flex-md-1">.col-flex-md-1</div>
-  <div class="col-flex-md-1">.col-flex-md-1</div>
-  <div class="col-flex-md-1">.col-flex-md-1</div>
-  <div class="col-flex-md-1">.col-flex-md-1</div>
-  <div class="col-flex-md-1">.col-flex-md-1</div>
-  <div class="col-flex-md-1">.col-flex-md-1</div>
-  <div class="col-flex-md-1">.col-flex-md-1</div>
-  <div class="col-flex-md-1">.col-flex-md-1</div>
-  <div class="col-flex-md-1">.col-flex-md-1</div>
-  <div class="col-flex-md-1">.col-flex-md-1</div>
+    <div class="col-flex-md-12">.col-flex-md-12</div>
+    <div class="col-flex-md-2">.col-flex-md-2</div>
+    <div class="col-flex-md-10">.col-flex-md-10</div>
+    <div class="col-flex-md-4">col-flex-md-4</div>
+    <div class="col-flex-md-8">.col-flex-md-8</div>
+    <div class="col-flex-md-6">.col-flex-md-6</div>
+    <div class="col-flex-md-6">.col-flex-md-6</div>
+</div>
+```
+
+**Offset:**
+```
+<div class="row-flex">
+    <div class="col-flex-md-2 col-flex-md-offset-10">.col-flex-md-2</div> 
+    <div class="col-flex-md-4 col-flex-md-offset-8">.col-flex-md-4</div> 
+    <div class="col-flex-md-6 col-flex-md-offset-6">.col-flex-md-6</div> 
+    <div class="col-flex-md-8 col-flex-md-offset-4">.col-flex-md-8</div> 
+    <div class="col-flex-md-10 col-flex-md-offset-2">.col-flex-md-10</div> 
+    <div class="col-flex-md-12 col-flex-md-offset-0">.col-flex-md-12</div> 
+</div>
+```
+
+**Nested:**
+```
+<div class="row-flex"> 
+  <div class="col-flex-md-12"> .col-flex-md-12 
+    <div class="row-flex"> 
+      <div class="col-flex-md-2">.col-flex-md-2</div> 
+      <div class="col-flex-md-10"> .col-flex-md-10 
+        <div class="row-flex"> 
+          <div class="col-flex-md-6">.col-flex-md-6</div> 
+          <div class="col-flex-md-6">.col-flex-md-6</div> 
+        </div> 
+      </div> 
+    </div>
+  </div> 
 </div>
 ```
 
