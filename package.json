@@ -1,6 +1,6 @@
 {
   "name": "bootstrap-grid-flexbox",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Plugins flexbox grid system for bootstrap 3",
   "style": "dist/css/bootstrap-grid-flexbox.css",
   "less": "less/bootstrap.less",

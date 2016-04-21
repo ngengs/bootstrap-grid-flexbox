@@ -1,5 +1,5 @@
 /*!
- * Bootstrap Grid Flexbox v1.0.0 (https://github.com/ngengs/bootstrap-grid-flexbox)
+ * Bootstrap Grid Flexbox v1.0.1 (https://github.com/ngengs/bootstrap-grid-flexbox)
  * Copyright 2016 Rizky Kharisma @ngengs (http://ngengs.com).
  * Licensed under MIT (https://github.com/ngengs/bootstrap-grid-flexbox/blob/master/LICENSE)
  */
@@ -51,6 +51,8 @@
   -ms-flex-pack: start;
   -webkit-justify-content: flex-start;
   justify-content: flex-start;
+}
+.start-xs.text-start {
   text-align: start;
 }
 .center-xs {
@@ -58,32 +60,36 @@
   -ms-flex-pack: center;
   -webkit-justify-content: center;
   justify-content: center;
+}
+.center-xs.text-center {
   text-align: center;
 }
 .end-xs {
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  text-align: end;
-}
-.top-xs {
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-}
-.middle-xs {
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-}
-.bottom-xs {
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   -webkit-justify-content: flex-end;
   justify-content: flex-end;
+}
+.end-xs.text-end {
+  text-align: end;
+}
+.top-xs {
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+}
+.middle-xs {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.bottom-xs {
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  -webkit-align-items: flex-end;
+  align-items: flex-end;
 }
 .col-flex-xs-12 {
   width: 100%;
@@ -292,6 +298,8 @@
     -ms-flex-pack: start;
     -webkit-justify-content: flex-start;
     justify-content: flex-start;
+  }
+  .start-sm.text-start {
     text-align: start;
   }
   .center-sm {
@@ -299,32 +307,36 @@
     -ms-flex-pack: center;
     -webkit-justify-content: center;
     justify-content: center;
+  }
+  .center-sm.text-center {
     text-align: center;
   }
   .end-sm {
-    -webkit-box-pack: start;
-    -ms-flex-pack: start;
-    -webkit-justify-content: flex-start;
-    justify-content: flex-start;
-    text-align: end;
-  }
-  .top-sm {
-    -webkit-box-pack: start;
-    -ms-flex-pack: start;
-    -webkit-justify-content: flex-start;
-    justify-content: flex-start;
-  }
-  .middle-sm {
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-  }
-  .bottom-sm {
     -webkit-box-pack: end;
     -ms-flex-pack: end;
     -webkit-justify-content: flex-end;
     justify-content: flex-end;
+  }
+  .end-sm.text-end {
+    text-align: end;
+  }
+  .top-sm {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+  }
+  .middle-sm {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+  .bottom-sm {
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
   }
   .col-flex-sm-12 {
     width: 100%;
@@ -534,6 +546,8 @@
     -ms-flex-pack: start;
     -webkit-justify-content: flex-start;
     justify-content: flex-start;
+  }
+  .start-md.text-start {
     text-align: start;
   }
   .center-md {
@@ -541,32 +555,36 @@
     -ms-flex-pack: center;
     -webkit-justify-content: center;
     justify-content: center;
+  }
+  .center-md.text-center {
     text-align: center;
   }
   .end-md {
-    -webkit-box-pack: start;
-    -ms-flex-pack: start;
-    -webkit-justify-content: flex-start;
-    justify-content: flex-start;
-    text-align: end;
-  }
-  .top-md {
-    -webkit-box-pack: start;
-    -ms-flex-pack: start;
-    -webkit-justify-content: flex-start;
-    justify-content: flex-start;
-  }
-  .middle-md {
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-  }
-  .bottom-md {
     -webkit-box-pack: end;
     -ms-flex-pack: end;
     -webkit-justify-content: flex-end;
     justify-content: flex-end;
+  }
+  .end-md.text-end {
+    text-align: end;
+  }
+  .top-md {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+  }
+  .middle-md {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+  .bottom-md {
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
   }
   .col-flex-md-12 {
     width: 100%;
@@ -776,6 +794,8 @@
     -ms-flex-pack: start;
     -webkit-justify-content: flex-start;
     justify-content: flex-start;
+  }
+  .start-lg.text-start {
     text-align: start;
   }
   .center-lg {
@@ -783,32 +803,36 @@
     -ms-flex-pack: center;
     -webkit-justify-content: center;
     justify-content: center;
+  }
+  .center-lg.text-center {
     text-align: center;
   }
   .end-lg {
-    -webkit-box-pack: start;
-    -ms-flex-pack: start;
-    -webkit-justify-content: flex-start;
-    justify-content: flex-start;
-    text-align: end;
-  }
-  .top-lg {
-    -webkit-box-pack: start;
-    -ms-flex-pack: start;
-    -webkit-justify-content: flex-start;
-    justify-content: flex-start;
-  }
-  .middle-lg {
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-  }
-  .bottom-lg {
     -webkit-box-pack: end;
     -ms-flex-pack: end;
     -webkit-justify-content: flex-end;
     justify-content: flex-end;
+  }
+  .end-lg.text-end {
+    text-align: end;
+  }
+  .top-lg {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+  }
+  .middle-lg {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+  .bottom-lg {
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
   }
   .col-flex-lg-12 {
     width: 100%;
