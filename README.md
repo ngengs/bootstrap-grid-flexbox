@@ -212,7 +212,6 @@ I use Grunt to build
     ```
     grunt dist
     ```
-5. In the package I add bootstrap as submodule git, you can use variable from bootstrap to compile, If you want that you can open the **[less](less/bootstrap-grid-flexbox.less)** and uncomment line **[7](less/bootstrap-grid-flexbox.less#L7)** and comment line **[13](less/bootstrap-grid-flexbox.less#L13)**
 
 
 ## Inspired
