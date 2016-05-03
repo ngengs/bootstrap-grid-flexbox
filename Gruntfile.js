@@ -49,6 +49,18 @@ module.exports = function (grunt) {
         dest: 'dist/css/<%= pkg.name %>.min.css'
       }
     },
+    
+    
+    
+    sass: {
+    	options: {
+	      sourcemap: true
+	    },
+	    compileCore: {
+			src: 'sass/<%= pkg.name %>.scss',
+			dest: 'dist/css/<%= pkg.name %>.css',
+      	}
+	  },
 
     watch: {
       less: {
@@ -95,7 +107,8 @@ module.exports = function (grunt) {
 
   // CSS distribution task.
   grunt.registerTask('less-compile', ['less:compileCore']);
-  grunt.registerTask('dist-css', ['less-compile', 'cssmin:minifyCore']);
+  grunt.registerTask('sass-compile', ['sass:compileCore']);
+  grunt.registerTask('dist-css', ['sass-compile', 'cssmin:minifyCore']);
 
   // Full distribution task.
   grunt.registerTask('dist', ['clean:dist', 'dist-css']);

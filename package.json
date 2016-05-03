@@ -1,6 +1,6 @@
 {
   "name": "bootstrap-grid-flexbox",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Plugins flexbox grid system for bootstrap 3",
   "style": "dist/css/bootstrap-grid-flexbox.css",
   "less": "less/bootstrap.less",
@@ -39,6 +39,7 @@
     "grunt-contrib-less": "~1.3.0",
     "grunt-contrib-watch": "~1.0.0",
     "grunt-exec": "~0.4.6",
+    "grunt-sass": "^1.2.0-beta",
     "load-grunt-tasks": "~3.4.1",
     "time-grunt": "^1.3.0"
   }
