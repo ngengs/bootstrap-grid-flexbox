@@ -11,8 +11,6 @@ module.exports = function (grunt) {
   // Force use of Unix newlines
   grunt.util.linefeed = '\n';
 
-  var path = require('path');
-
   // Project configuration.
   grunt.initConfig({
 
