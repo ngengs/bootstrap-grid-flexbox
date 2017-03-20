@@ -28,7 +28,10 @@ module.exports = function (grunt) {
       compileCore: {
         options: {
           strictMath: true,
-          sourceMap: false
+          sourceMap: false,
+          outputSourceFiles: true,
+          sourceMapURL: '<%= pkg.name %>.css.map',
+          sourceMapFilename: 'dist/css/<%= pkg.name %>.css.map'
         },
         src: 'less/<%= pkg.name %>.less',
         dest: 'dist/css/<%= pkg.name %>.css'
@@ -41,7 +44,8 @@ module.exports = function (grunt) {
         //    and then simplify the fix for https://github.com/twbs/bootstrap/issues/14837 accordingly
         compatibility: 'ie8',
         keepSpecialComments: '*',
-        sourceMap: false,
+        sourceMap: true,
+        sourceMapInlineSources: true,
         advanced: false
       },
       minifyCore: {
@@ -49,18 +53,22 @@ module.exports = function (grunt) {
         dest: 'dist/css/<%= pkg.name %>.min.css'
       }
     },
-    
-    
-    
+
+
     sass: {
-    	options: {
-	      sourcemap: true
-	    },
-	    compileCore: {
-			src: 'sass/<%= pkg.name %>.scss',
-			dest: 'dist/css/<%= pkg.name %>.css',
-      	}
-	  },
+      options: {
+        precision: 6,
+        outputSourceFiles: true,
+        outputStyle: 'expanded',
+        sourceMap: true,
+        sourceMapURL: '<%= pkg.name %>.css.map',
+        sourceMapFilename: 'dist/css/<%= pkg.name %>.css.map'
+      },
+      compileCore: {
+        src: 'sass/<%= pkg.name %>.scss',
+        dest: 'dist/css/<%= pkg.name %>.css'
+      }
+    },
 
     watch: {
       less: {
