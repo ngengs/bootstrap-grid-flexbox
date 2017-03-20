@@ -165,7 +165,7 @@ module.exports = function (grunt) {
   grunt.registerTask('dist', ['clean:dist', 'dist-css']);
 
   // Test task
-  grunt.registerTask('test', 'csslint:dist');
+  grunt.registerTask('test', ['dist', 'csslint:dist']);
 
   // Default task.
   grunt.registerTask('default', ['dist']);
