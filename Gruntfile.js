@@ -89,6 +89,27 @@ module.exports = function (grunt) {
       }
     },
 
+    csscomb: {
+      options: {
+        config: '.csscomb.json'
+      },
+      dist: {
+        expand: true,
+        cwd: 'dist/css/',
+        src: ['*.css', '!*.min.css'],
+        dest: 'dist/css/'
+      }
+    },
+
+    csslint: {
+      options: {
+        csslintrc: '.csslintrc'
+      },
+      dist: [
+        'dist/css/<%= pkg.name %>.css'
+      ]
+    },
+
     watch: {
       less: {
         files: 'less/**/*.less',
@@ -135,10 +156,13 @@ module.exports = function (grunt) {
   // CSS distribution task.
   grunt.registerTask('less-compile', ['less:compileCore']);
   grunt.registerTask('sass-compile', ['sass:compileCore']);
-  grunt.registerTask('dist-css', ['sass-compile', 'cssmin:minifyCore', 'postcss:dist']);
+  grunt.registerTask('dist-css', ['sass-compile', 'cssmin:minifyCore', 'postcss:dist', 'csscomb:dist']);
 
   // Full distribution task.
   grunt.registerTask('dist', ['clean:dist', 'dist-css']);
+
+  // Test task
+  grunt.registerTask('test', 'csslint:dist');
 
   // Default task.
   grunt.registerTask('default', ['dist']);
