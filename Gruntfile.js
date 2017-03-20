@@ -52,15 +52,13 @@ module.exports = function (grunt) {
       }
     },
 
-
     sass: {
       options: {
         precision: 6,
-        outputSourceFiles: true,
         outputStyle: 'expanded',
         sourceMap: true,
-        sourceMapURL: '<%= pkg.name %>.css.map',
-        sourceMapFilename: 'dist/css/<%= pkg.name %>.css.map'
+        sourceMapEmbed: true,
+        sourceMapContents: true
       },
       compileCore: {
         src: 'sass/<%= pkg.name %>.scss',
