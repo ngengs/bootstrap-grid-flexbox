@@ -4,6 +4,7 @@
   "description": "Plugins flexbox grid system for bootstrap 3",
   "style": "dist/css/bootstrap-grid-flexbox.css",
   "less": "less/bootstrap.less",
+  "sass": "sass/bootstrap.scss",
   "repository": {
     "type": "git",
     "url": "https://github.com/ngengs/bootstrap-grid-flexbox.git"
