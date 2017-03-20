@@ -57,7 +57,6 @@ module.exports = function (grunt) {
         precision: 6,
         outputStyle: 'expanded',
         sourceMap: true,
-        sourceMapEmbed: true,
         sourceMapContents: true
       },
       compileCore: {
