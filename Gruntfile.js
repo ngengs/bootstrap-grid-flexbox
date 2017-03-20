@@ -49,6 +49,10 @@ module.exports = function (grunt) {
       minifyCore: {
         src: 'dist/css/<%= pkg.name %>.css',
         dest: 'dist/css/<%= pkg.name %>.min.css'
+      },
+      minifyDocs: {
+        src: 'docs/css/docs-style.css',
+        dest: 'docs/css/docs-style.min.css'
       }
     },
 
@@ -62,6 +66,10 @@ module.exports = function (grunt) {
       compileCore: {
         src: 'sass/<%= pkg.name %>.scss',
         dest: 'dist/css/<%= pkg.name %>.css'
+      },
+      compileDocs: {
+        src: 'sass/docs/docs.scss',
+        dest: 'docs/css/docs-style.css'
       }
     },
 
@@ -85,6 +93,9 @@ module.exports = function (grunt) {
       },
       dist: {
         src: 'dist/css/<%= pkg.name %>.css'
+      },
+      docs: {
+        src: 'docs/css/docs-style.css'
       }
     },
 
@@ -97,6 +108,10 @@ module.exports = function (grunt) {
         cwd: 'dist/css/',
         src: ['*.css', '!*.min.css'],
         dest: 'dist/css/'
+      },
+      docs: {
+        src: 'docs/css/docs-style.css',
+        dest: 'docs/css/docs-style.css'
       }
     },
 
@@ -106,7 +121,32 @@ module.exports = function (grunt) {
       },
       dist: [
         'dist/css/<%= pkg.name %>.css'
+      ],
+      docs: [
+        'docs/css/docs-style.css'
       ]
+    },
+
+    copy: {
+      docs:{
+        expand: true,
+        cwd: 'dist/css',
+        src: ['*.min.css','*.min.css.map'],
+        dest: 'docs/css',
+        flatten: true,
+        filter: 'isFile'
+      }
+    },
+
+    htmllint: {
+      options: {
+        ignore: [
+          'Attribute "autocomplete" not allowed on element "button" at this point.',
+          'Attribute "autocomplete" is only allowed when the input type is "color", "date", "datetime", "datetime-local", "email", "hidden", "month", "number", "password", "range", "search", "tel", "text", "time", "url", or "week".',
+          'Element "img" is missing required attribute "src".'
+        ]
+      },
+      src: 'docs/*.html'
     },
 
     watch: {
@@ -164,8 +204,11 @@ module.exports = function (grunt) {
   // Full distribution task.
   grunt.registerTask('dist', ['clean:dist', 'dist-css']);
 
+  // Documentation task
+  grunt.registerTask('docs', ['sass:compileDocs', 'postcss:docs', 'csscomb:docs', 'cssmin:minifyDocs', 'copy:docs']);
+
   // Test task
-  grunt.registerTask('test', ['dist', 'csslint:dist']);
+  grunt.registerTask('test', ['dist', 'csslint:dist', 'docs', 'csslint:docs', 'htmllint']);
 
   // Default task.
   grunt.registerTask('default', ['dist']);
