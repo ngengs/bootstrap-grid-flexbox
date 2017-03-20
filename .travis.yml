@@ -2,7 +2,7 @@ sudo: required
 dist: trusty
 language: node_js
 node_js:
-- "node"
+- node
 install:
 - npm install
 cache:
@@ -13,9 +13,8 @@ script:
 deploy:
   provider: releases
   api_key:
-   secure: "q7SStJ8hWSYql5T6yoizXEIwsCwDEadVgziy1crVkuHahfz2H/faKf3v7Ub/m68jrWFanLBNRGUUhIGz2snlRDCqcCH48g08lSvbuHRsw53Q3CCqPB8wM6KV9HJ90INK767KyfI7JUmrWsJeAGuu1X0GO/fqhN29bcJnOZn/4dAtC5HV+4XIgtrKJHgHDrXfpk2KvpC5ANW3mfVsQilty0GnddBtxFULQVNJHb/N32QcvIPhZbweM25/36X6AqRQL+nDlc249FDqnE1sNc3tjjDBasKzA0Glb0xIni8EzINzHp+DXQn0E/iX6isRmuIehfiEeTLPizhNGAI5oqgLitf+RSqyI01iH/eWGpyDygvrFE7oUHRfCTLf1t7aDQTglfkJSHiqfzMDyg74UOYktWcRYTkqahQDT/4DPsddDnCsjsbzVuC1C07pFAkJZeoEdy/4vCszC4abbon4wLRUhaeAXTu25RAhGdsljD0Yj6CwlwwvTTwpgcpST27bfAI/IzaAJghOvf8miZSlSpxsfdBn9tm4WbYxivz5G/ev3uZrv6v1lm+nC2stZ06/Dwo7P0uez3f6wP+Z3i2JItimp9YrnOJ6ybY+s764sITTrUR5oV6godN4tgaXPWgK2uJktP/OJ66ca5SSixmb0W1xKT9f7EyCA56OrSPEWVd12S8="
-  file_glob: true
-  file: "*-dist.zip"
+    secure: aDnTDUgOPRoesuD+My5BN1NEYCPO1Jzl+9J9KaoFBMPLX0x9vmt3IeSfUZ0lpZG56zX4qZHyh0eKB9J+yB57AZZyRBDJCBtzMVvV3oFThCOIOiMhtg0XJ42xUf53/Wvy25LJ7J1gTFQJkt4JEKDeGiCFYPhydDSnk6T15/OkoDJNKu3+PB5r15L1GtoUMIMcFmbaMyFiaFCMME6LuFr3uXHAMf+QAdW9JNW3knuHRgt68pcDNcmztOeFnq3H0k9cGS+C5eeJzrp5IO7myEsEG2ZdPnT7+Sk2f9ikVg11nyDkuYHzQAMIc5pVcsSo67yf2+DosjK0S9p8n1DK6ypSIyS2Taqg3lguI/hkOUp3kIMM6E7VfxOkDJEQYCMpCVvivFZwk0nRDS8C1KDDX2407w5WEXWIgw/PpVq5zxJ3iQN6uoZFU+fmOkWoE8kOzz9uK2jQgpWfNAqQenqlsgICFlXmTww/hHazhiLM0l0Y/1VG3jwf4HH4AbTAoM0WqWOlXdAiGyfdWprTMOAeNXJ2qTmxpKtsw/HzwugmbY+cW22czRhvXqqw7JxC3L6+sdDoPeBXFBSHXdj/KLTFR8cJ/W+LarUm7olxzMjaB5nI7nkh0XVbna47u5J8MzP18km6EkuJgjDHGrg9MzDb+YJ5PKOzBQ6B8SW3VML2tFmzl8Y=
+  file: '*-dist.zip'
   skip_cleanup: true
   on:
     tags: true
