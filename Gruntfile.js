@@ -113,6 +113,10 @@ module.exports = function (grunt) {
       less: {
         files: 'less/**/*.less',
         tasks: 'less'
+      },
+      sass: {
+        files: 'sass/**/*.scss',
+        tasks: 'sass'
       }
     },
 
