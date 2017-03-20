@@ -156,7 +156,7 @@ module.exports = function (grunt) {
   // CSS distribution task.
   grunt.registerTask('less-compile', ['less:compileCore']);
   grunt.registerTask('sass-compile', ['sass:compileCore']);
-  grunt.registerTask('dist-css', ['sass-compile', 'cssmin:minifyCore', 'postcss:dist', 'csscomb:dist']);
+  grunt.registerTask('dist-css', ['sass-compile', 'postcss:dist', 'csscomb:dist', 'cssmin:minifyCore']);
 
   // Full distribution task.
   grunt.registerTask('dist', ['clean:dist', 'dist-css']);
