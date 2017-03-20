@@ -1,4 +1,4 @@
-# Bootstrap Grid Flexbox
+# Bootstrap Grid Flexbox [![Build Status](https://travis-ci.org/ngengs/bootstrap-grid-flexbox.svg?branch=master)](https://travis-ci.org/ngengs/bootstrap-grid-flexbox)
 Plugins flexbox grid system for bootstrap 3.
 
 ### Story Behind
@@ -24,14 +24,19 @@ bootstrap-grid-flexbox/
 │   └── css/
 │         ├── bootstrap-grid-flexbox.css
 │         └── bootstrap-grid-flexbox.min.css
-└── less/
-    ├── bootstrap-grid-flexbox.less
-    ├── grid.less
-    ├── mixxins.less
-    └── variables.less
+├── less/
+│   ├── bootstrap-grid-flexbox.less
+│   ├── grid.less
+│   ├── mixins.less
+│   └── variables.less
+└── sass/
+    ├── bootstrap-grid-flexbox.scss
+    ├── _grid.scss
+    ├── _mixins.scss
+    └── _variables.scss
 ```
 
-The **dist** directory is for compiled css, and you can use that, but if you want build you can use file in **less** directory and compile the **[bootstrap-grid-flexbox.less](less/bootstrap-grid-flexbox.less)**
+The **dist** directory is for compiled css, and you can use that, but if you want build you can use file in **less** directory and compile the **[bootstrap-grid-flexbox.less](less/bootstrap-grid-flexbox.less)** or **sass** directory and compile the **[bootstrap-grid-flexbox.scss](sass/bootstrap-grid-flexbox.scss)**
 
 
 ## Bugs and feature requests
@@ -201,7 +206,7 @@ I use Grunt to build
     ```
     npm install -g grunt-cli
     ```
-3. Install package from [build](build) directory
+3. Install package
 
    ```
    npm install
