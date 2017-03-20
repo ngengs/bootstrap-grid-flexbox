@@ -1,0 +1,21 @@
+language: node_js
+node_js:
+- node
+install:
+- npm install
+cache:
+  directories:
+  - node_modules
+script:
+- if [ "$TRAVIS_BRANCH" == "development" ];then grunt test; else grunt prep-release;fi
+deploy:
+  provider: releases
+  api_key:
+   secure: "q7SStJ8hWSYql5T6yoizXEIwsCwDEadVgziy1crVkuHahfz2H/faKf3v7Ub/m68jrWFanLBNRGUUhIGz2snlRDCqcCH48g08lSvbuHRsw53Q3CCqPB8wM6KV9HJ90INK767KyfI7JUmrWsJeAGuu1X0GO/fqhN29bcJnOZn/4dAtC5HV+4XIgtrKJHgHDrXfpk2KvpC5ANW3mfVsQilty0GnddBtxFULQVNJHb/N32QcvIPhZbweM25/36X6AqRQL+nDlc249FDqnE1sNc3tjjDBasKzA0Glb0xIni8EzINzHp+DXQn0E/iX6isRmuIehfiEeTLPizhNGAI5oqgLitf+RSqyI01iH/eWGpyDygvrFE7oUHRfCTLf1t7aDQTglfkJSHiqfzMDyg74UOYktWcRYTkqahQDT/4DPsddDnCsjsbzVuC1C07pFAkJZeoEdy/4vCszC4abbon4wLRUhaeAXTu25RAhGdsljD0Yj6CwlwwvTTwpgcpST27bfAI/IzaAJghOvf8miZSlSpxsfdBn9tm4WbYxivz5G/ev3uZrv6v1lm+nC2stZ06/Dwo7P0uez3f6wP+Z3i2JItimp9YrnOJ6ybY+s764sITTrUR5oV6godN4tgaXPWgK2uJktP/OJ66ca5SSixmb0W1xKT9f7EyCA56OrSPEWVd12S8="
+  file_glob: true
+  file: "*-dist.zip"
+  skip_cleanup: true
+  on:
+    tags: true
+    repo: ngengs/bootstrap-grid-flexbox
+    branch: master
