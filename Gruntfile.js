@@ -68,6 +68,29 @@ module.exports = function (grunt) {
       }
     },
 
+    postcss: {
+      options: {
+        map: true,
+        processors: [
+          require('autoprefixer')({
+            browsers: [
+              'Android 2.3',
+              'Android >= 4',
+              'Chrome >= 20',
+              'Firefox >= 24',
+              'Explorer >= 8',
+              'iOS >= 6',
+              'Opera >= 12',
+              'Safari >= 6'
+            ]
+          })
+        ]
+      },
+      dist: {
+        src: 'dist/css/<%= pkg.name %>.css'
+      }
+    },
+
     watch: {
       less: {
         files: 'less/**/*.less',
@@ -114,7 +137,7 @@ module.exports = function (grunt) {
   // CSS distribution task.
   grunt.registerTask('less-compile', ['less:compileCore']);
   grunt.registerTask('sass-compile', ['sass:compileCore']);
-  grunt.registerTask('dist-css', ['sass-compile', 'cssmin:minifyCore']);
+  grunt.registerTask('dist-css', ['sass-compile', 'cssmin:minifyCore', 'postcss:dist']);
 
   // Full distribution task.
   grunt.registerTask('dist', ['clean:dist', 'dist-css']);

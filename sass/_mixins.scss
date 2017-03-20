@@ -10,17 +10,12 @@
   }
   #{$list} {
     box-sizing: border-box;
-    -webkit-flex: 0 0 auto;
-    -ms-flex: 0 0 auto;
-    -webkit-box-flex: 0;
     flex: 0 0 auto;
     min-height: 1px;
     padding-left:  ceil(($grid-gutter-width / 2));
     padding-right: floor(($grid-gutter-width / 2));
     // Set default width to max column
-    width: percentage(($grid-columns / $grid-columns));
-    -ms-flex-preferred-size: percentage(($grid-columns / $grid-columns));
-    -webkit-flex-basis: percentage(($grid-columns / $grid-columns));
+    width: percentage(($grid-columns / $grid-columns));;
     flex-basis: percentage(($grid-columns / $grid-columns));
     max-width: percentage(($grid-columns / $grid-columns));
   }
@@ -30,8 +25,6 @@
   @if ($type == width) and ($index > 0) {
     .col-flex-#{$class}-#{$index} {
       width: percentage(($index / $grid-columns));
-      -ms-flex-preferred-size: percentage(($index / $grid-columns));
-      -webkit-flex-basis: percentage(($index / $grid-columns));
       flex-basis: percentage(($index / $grid-columns));
       max-width: percentage(($index / $grid-columns));
     }
@@ -83,59 +76,37 @@
 // Create row
 @mixin make-row-flex($grid: $grid-gutter-width){
   box-sizing: border-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: -webkit-box;
   display: flex;
-  -webkit-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
-  -webkit-box-flex: 0;
   flex: 0 1 auto;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
   flex-direction: row;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin-left: ceil(($grid / -2));
   margin-right: floor(($grid / -2));
   &.reverse{
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: reverse;
-    -webkit-flex-direction: row-reverse;
-    -ms-flex-direction: row-reverse;
     flex-direction: row-reverse;
   }
 }
 
 @mixin make-generate-aligment-other($aligment){
   @if($aligment == center){
-     -webkit-justify-content: $aligment;
      justify-content: $aligment;
    } @else {
      $value: flex-#{$aligment};
-     -webkit-justify-content: $value;
      justify-content: $value;
    }
 }
 
 @mixin make-generate-vertical-aligment-other($aligment){
   @if($aligment == center){
-    -webkit-align-items: $aligment;
     align-items: $aligment;
   } @else {
     $value: flex-#{$aligment};
-     -webkit-align-items: $value;
      align-items: $value;
   }
 }
 
 @mixin make-generate-aligment($class, $name){
   .#{$name}-#{$class}{
-    -webkit-box-pack: $name;
-    -ms-flex-pack: $name;
     @include make-generate-aligment-other($name);
     &.text-#{$name}{
       text-align: $name;
@@ -145,8 +116,6 @@
 
 @mixin make-generate-vertical-aligment($class, $name, $aligment){
   .#{$name}-#{$class}{
-    -webkit-box-align: $aligment;
-    -ms-flex-align: $aligment;
     @include make-generate-vertical-aligment-other($aligment);
   }
 }
