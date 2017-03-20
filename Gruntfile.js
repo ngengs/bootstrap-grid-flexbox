@@ -213,5 +213,5 @@ module.exports = function (grunt) {
   // Default task.
   grunt.registerTask('default', ['dist']);
 
-  grunt.registerTask('prep-release', ['dist', 'compress']);
+  grunt.registerTask('prep-release', ['dist', 'docs', 'compress']);
 };
